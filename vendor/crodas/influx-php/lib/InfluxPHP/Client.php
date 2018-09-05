@@ -40,7 +40,7 @@ namespace crodas\InfluxPHP;
 
 class Client extends BaseHTTP
 {
-	public $givurl = parse_url(getenv('SCALINGO_INFLUX_URL'));
+
     /**
      * READ privilege
      */
@@ -61,7 +61,7 @@ class Client extends BaseHTTP
     protected $user;
     protected $pass;
 
-    public function __construct($host = $givurl['host'], $port = 30041, $u = 'pubnubtestapp_1617', $p = 'DznP0RCLz-gR3Fs1gKmO')
+    public function __construct($host = "localhost", $port = 30041, $u = 'pubnubtestapp_1617', $p = 'DznP0RCLz-gR3Fs1gKmO')
     {
         $this->host = $host;
         $this->port = $port;

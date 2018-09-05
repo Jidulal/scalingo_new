@@ -2,7 +2,9 @@
 
 require __DIR__ . "/vendor/autoload.php";
 
-$client = new \crodas\InfluxPHP\Client;
+$url = parse_url(getenv('SCALINGO_INFLUX_URL'));
+
+$client = new \crodas\InfluxPHP\Client($url['host'], $url['port'], $url['user'], $url['pass']);
 
 $dbs = $client->getDatabases();
 if ($dbs) {
