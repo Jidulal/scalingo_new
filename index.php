@@ -11,7 +11,7 @@ $db->insert("foo", ['foobar' => 'bar']);
 
 
 
-$result = $client->foobar;
+$result = $client->substr($url['path'], 1);
 
 foreach ($result->query("SELECT * FROM foo;") as $row) {
     var_dump($row, $row->time);
